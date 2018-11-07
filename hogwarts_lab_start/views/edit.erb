@@ -1,0 +1,21 @@
+<form action="/students/<%=@student.id%>" method="post">
+
+  <label for="first-name">First Name:</label>
+  <input id="first-name" type="text" name="first_name" value=<%=@student.first_name%>>
+  <br>
+  <label for="last-name">Last Name:</label>
+  <input id="last-name" type="text" name="last_name" value=<%=@student.last_name%>>
+  <br>
+  <label for="age">Age:</label>
+  <input id="age" type="number" name="age" value=<%=@student.age%>>
+  <br>
+  <label for="house-select">Select House:</label>
+  <select name="house_id" id="house-select">
+    <option value="1" <%='selected' if @student.house_id == 1%> >Gryffindor</option>
+    <option value="2" <%='selected' if @student.house_id == 2%> >Hufflepuff</option>
+    <option value="3" <%='selected' if @student.house_id == 3%> >Ravenclaw</option>
+    <option value="4" <%='selected' if @student.house_id == 4%> >Slytherin</option>
+  </select>
+  <br>
+  <input type="submit" value="Submit Changes">
+</form>

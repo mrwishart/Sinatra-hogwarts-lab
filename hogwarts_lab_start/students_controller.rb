@@ -1,8 +1,9 @@
 require('sinatra')
-require('sinatra/contrib/all')
+require('sinatra/contrib/all') if development?
+require('sinatra/reloader') if development?
 require_relative('models/student')
 require_relative('models/house')
-also_reload('./models/*')
+also_reload('models/student')
 
 # index
 get '/students' do
@@ -32,6 +33,22 @@ end
 
 # edit
 
+get '/students/:id/edit' do
+  @student = Student.find(params[:id])
+  erb(:edit)
+end
+
 # update
 
+post '/students/:id' do
+  changed_student = Student.new(params)
+  changed_student.update()
+  redirect to 'students/' + changed_student.id.to_s
+end
+
 # destroy
+post '/students/:id/delete' do
+  @student = Student.find(params['id'])
+  @student.delete
+  redirect to 'students'
+end
