@@ -1,10 +1,10 @@
 <form action="/students/<%=@student.id%>" method="post">
 
   <label for="first-name">First Name:</label>
-  <input id="first-name" type="text" name="first_name" value=<%=@student.first_name%>>
+  <input id="first-name" type="text" name="first_name" value=<%=@student.first_name.capitalize%>>
   <br>
   <label for="last-name">Last Name:</label>
-  <input id="last-name" type="text" name="last_name" value=<%=@student.last_name%>>
+  <input id="last-name" type="text" name="last_name" value=<%=@student.last_name.capitalize%>>
   <br>
   <label for="age">Age:</label>
   <input id="age" type="number" name="age" value=<%=@student.age%>>

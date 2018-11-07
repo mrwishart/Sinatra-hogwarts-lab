@@ -29,13 +29,13 @@ end
 
 post '/students' do
   Student.new(params).save
-  redirect to 'students'
+  redirect to '/students'
 end
 
 # edit
 
 get '/students/:id/edit' do
-  @houses = House.all 
+  @houses = House.all
   @student = Student.find(params[:id])
   erb(:edit)
 end
@@ -45,12 +45,16 @@ end
 post '/students/:id' do
   changed_student = Student.new(params)
   changed_student.update()
-  redirect to 'students/' + changed_student.id.to_s
+  redirect to '/students/' + changed_student.id.to_s
 end
 
 # destroy
 post '/students/:id/delete' do
   @student = Student.find(params['id'])
   @student.delete
-  redirect to 'students'
+  redirect to '/students'
+end
+
+get '/?' do
+  redirect to '/students'
 end
