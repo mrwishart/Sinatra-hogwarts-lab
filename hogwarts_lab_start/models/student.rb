@@ -62,7 +62,7 @@ class Student
   end
 
   def self.all()
-    sql = "SELECT * FROM students"
+    sql = "SELECT * FROM students ORDER BY id"
     student_data = SqlRunner.run(sql)
     students = map_items(student_data)
     return students
