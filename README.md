@@ -1,3 +1,9 @@
+# Sinatra Pair Programming Lab
+
+Week 4, Day 2 afternoon pair programming lab with Chris M. Reinforcing use of RESTful routes in Sinatra. Run student_controller.rb in your Ruby interpreter and look up localhost:4567 in your browser.
+
+Original brief:
+
 ## Hogwarts lab
 
 We've given you a starting point with all your models / sql / seeds pre-written (you lucky things!)
